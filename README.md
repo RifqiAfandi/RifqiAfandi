@@ -3,7 +3,7 @@
 ###
 
 <div align="center">
-  <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=RifqiAfandi&" alt="RifqiAfandi" />
+<!--   <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=RifqiAfandi&" alt="RifqiAfandi" /> -->
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=RifqiAfandi&show_icons=true&locale=en&layout=compact" alt="RifqiAfandi" />
 </div>
 
