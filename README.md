@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODVmaXl5aXA5a2dtb3N3NWgxdWV2OXF0eHRwZXMzMjljcWExanppZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KxbHmvL3MGcctzlfdX/giphy.gif" width="100%" />
+  <img
+src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODVmaXl5aXA5a2dtb3N3NWgxdWV2OXF0eHRwZXMzMjljcWExanppZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KxbHmvL3MGcctzlfdX/giphy.gif" width="100%" />
 </div>
 
 <h2 align="left">Hi 👋! My name is Rifqi and I'm a Web Developer from Indonesia</h2>
