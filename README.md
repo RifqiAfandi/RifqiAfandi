@@ -29,19 +29,19 @@
 ###
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/rifqi-afandi-123456789/" target="_blank">
+  <a href="https://www.linkedin.com/in/rifqi-afandi-unej/" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="37" height="25" alt="linkedin logo"  />
   </a>
 
-  <a href="https://www.instagram.com/rifqi_afandi/" target="_blank">
+  <a href="https://www.instagram.com/ryf.afn/" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="37" height="25" alt="instagram logo"  />
   </a>
 
-  <a href="https://wa.me/1234567890" target="_blank">
+  <a href="https://wa.me/085230259230" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/whatsapp/default.svg" width="37" height="25" alt="whatsapp logo"  />
   </a>
 
-  <a href="mailto:rifqi.afandi@example.com" target="_blank">
+  <a href="https://mail.google.com/mail/u/0/?fs=1&to=rifqitriafandi.20@gmail.com" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="37" height="25" alt="gmail logo"  />
   </a>
 </div>
@@ -49,8 +49,8 @@
 ###
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=RifqiAfandi&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=5&theme=codeSTACKr&hide_border=false&order=2" height="130" alt="languages graph"  />
-  <img src="https://streak-stats.demolab.com?user=RifqiAfandi&locale=en&mode=daily&theme=codeSTACKr&hide_border=true&border_radius=1&order=3" height="130" alt="streak graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=RifqiAfandi&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=5&theme=codeSTACKr&hide_border=false&order=2" height="150" alt="languages graph"  />
+  <img src="https://streak-stats.demolab.com?user=RifqiAfandi&locale=en&mode=daily&theme=codeSTACKr&hide_border=true&border_radius=1&order=3" height="150" alt="streak graph"  />
 </div>
 
 ###
