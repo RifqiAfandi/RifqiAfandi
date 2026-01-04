@@ -32,15 +32,12 @@
   <a href="https://www.linkedin.com/in/rifqi-afandi-unej/" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="37" height="25" alt="linkedin logo"  />
   </a>
-
   <a href="https://www.instagram.com/ryf.afn/" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="37" height="25" alt="instagram logo"  />
   </a>
-
   <a href="https://wa.me/085230259230" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/whatsapp/default.svg" width="37" height="25" alt="whatsapp logo"  />
   </a>
-
   <a href="https://mail.google.com/mail/u/0/?fs=1&to=rifqitriafandi.20@gmail.com" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="37" height="25" alt="gmail logo"  />
   </a>
@@ -56,7 +53,7 @@
 
 <div align="center">
 
-| <h1>351</h1><br><sub>Total Contributions</sub><br><sup>27 Sep 2023 - Present</sup> | <h1>🔥 4</h1><br><sub><b>Current Streak</b></sub><br><sup>1 Jan - 4 Jan</sup> | <h1>28</h1><br><sub>Longest Streak</sub><br><sup>20 Oct - 16 Nov</sup> |
+| <h1>354</h1><br><sub>Total Contributions</sub><br><sup>Sep 27, 2023 - Present</sup> | <h1>🔥 4</h1><br><sub><b>Current Streak</b></sub><br><sup>Jan 1 - Jan 4</sup> | <h1>19</h1><br><sub>Longest Streak</sub><br><sup>Mar 11 - Mar 29</sup> |
 |:---:|:---:|:---:|
 
 </div>
@@ -70,13 +67,13 @@
 <h4>Most Used Languages</h4>
 
 ```text
-████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████
+███████████████████████████████████████████████████
 ```
 
-| 🔴 HTML `32.93%` | 🟡 JavaScript `6.25%` |
+| 🟡 JavaScript `87.81%` | 🟣 CSS `8.41%` |
+| 🔵 Python `2.41%` | 🔴 HTML `0.99%` |
+| 🟣 Kotlin `0.38%` |  |
 |:---|:---|
-| 🟣 CSS `32.55%` | 🔵 Python `4.04%` |
-| 🟠 Java `23.98%` | ⚫ Dockerfile `0.24%` |
 
 </td></tr>
 </table>
@@ -90,3 +87,5 @@
 </div>
 
 ###
+
+<!-- Last updated: 2026-01-04T16:46:15.075Z -->
