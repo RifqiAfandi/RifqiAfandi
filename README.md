@@ -48,18 +48,19 @@
 
 ###
 
+<!-- Languages Graph -->
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=RifqiAfandi&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=5&theme=codeSTACKr&hide_border=false&order=2" height="150" alt="languages graph"  />
-  <img src="https://streak-stats.demolab.com?user=RifqiAfandi&locale=en&mode=daily&theme=codeSTACKr&hide_border=true&border_radius=1&order=3" height="150" alt="streak graph"  />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/languages-light.svg">
+    <img alt="Top Languages" src="./assets/languages-dark.svg" height="180" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/streak-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/streak-light.svg">
+    <img alt="Streak Stats" src="./assets/streak-dark.svg" height="180" />
+  </picture>
 </div>
-
-###
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RifqiAfandi/RifqiAfandi/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RifqiAfandi/RifqiAfandi/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/RifqiAfandi/RifqiAfandi/output/pacman-contribution-graph.svg">
-</picture>
 
 ###
 
