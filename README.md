@@ -48,18 +48,11 @@
 
 ###
 
-<!-- Languages Graph -->
+<!-- Stats Section -->
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/languages-light.svg">
-    <img alt="Top Languages" src="./assets/languages-dark.svg" height="180" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/streak-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/streak-light.svg">
-    <img alt="Streak Stats" src="./assets/streak-dark.svg" height="180" />
-  </picture>
+  <img src="./assets/languages.svg" alt="Top Languages" />
+  <img width="10" />
+  <img src="./assets/streak.svg" alt="GitHub Streak" />
 </div>
 
 ###
