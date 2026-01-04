@@ -1,4 +1,5 @@
 const https = require('https');
+const fs = require('fs');
 
 const USERNAME = 'RifqiAfandi';
 
@@ -218,80 +219,131 @@ function formatDateFull(dateStr) {
   return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
-// Generate progress bar (HTML)
-function generateProgressBar(languages, totalBytes) {
-  let bar = '';
-  for (const [lang, bytes] of languages) {
-    const percentage = (bytes / totalBytes) * 100;
+// Generate Streak SVG
+function generateStreakSVG(totalContributions, streaks, createdAt) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="495" height="195" rx="10" fill="url(#grad)" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Title -->
+  <text x="247.5" y="28" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">GitHub Contribution Streak</text>
+  
+  <!-- Divider -->
+  <line x1="20" y1="45" x2="475" y2="45" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Total Contributions -->
+  <g transform="translate(82.5, 75)">
+    <text x="0" y="0" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">${totalContributions}</text>
+    <text x="0" y="25" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Total Contributions</text>
+    <text x="0" y="42" fill="#6e7681" font-family="Segoe UI, Arial, sans-serif" font-size="10" text-anchor="middle">${formatDateFull(createdAt)} - Present</text>
+  </g>
+  
+  <!-- Current Streak (center, highlighted) -->
+  <g transform="translate(247.5, 75)">
+    <text x="0" y="-15" fill="#f0883e" font-family="Segoe UI, Arial, sans-serif" font-size="18" text-anchor="middle">🔥</text>
+    <text x="0" y="15" fill="#f0883e" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle">${streaks.current.count}</text>
+    <text x="0" y="42" fill="#f0883e" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Current Streak</text>
+    <text x="0" y="58" fill="#6e7681" font-family="Segoe UI, Arial, sans-serif" font-size="10" text-anchor="middle">${formatDate(streaks.current.start)} - ${formatDate(streaks.current.end)}</text>
+  </g>
+  
+  <!-- Longest Streak -->
+  <g transform="translate(412.5, 75)">
+    <text x="0" y="0" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">${streaks.longest.count}</text>
+    <text x="0" y="25" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Longest Streak</text>
+    <text x="0" y="42" fill="#6e7681" font-family="Segoe UI, Arial, sans-serif" font-size="10" text-anchor="middle">${formatDate(streaks.longest.start)} - ${formatDate(streaks.longest.end)}</text>
+  </g>
+  
+  <!-- Vertical dividers -->
+  <line x1="165" y1="55" x2="165" y2="145" stroke="#30363d" stroke-width="1"/>
+  <line x1="330" y1="55" x2="330" y2="145" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Bottom stats -->
+  <rect x="20" y="155" width="455" height="30" rx="5" fill="#21262d"/>
+  <text x="247.5" y="175" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Keep pushing code! 🚀 Your contributions make a difference.</text>
+</svg>`;
+}
+
+// Generate Languages SVG
+function generateLanguagesSVG(langData) {
+  const totalBytes = Object.values(langData).reduce((a, b) => a + b, 0);
+  const sortedLangs = Object.entries(langData)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8);
+  
+  // Progress bar segments
+  let progressBarSVG = '';
+  let xOffset = 20;
+  const barWidth = 455;
+  
+  for (const [lang, bytes] of sortedLangs) {
+    const percentage = bytes / totalBytes;
+    const segmentWidth = percentage * barWidth;
     const color = LANG_COLORS[lang] || '#8b949e';
-    bar += `<span style="background-color: ${color}; width: ${percentage.toFixed(2)}%; height: 8px; display: inline-block;"></span>`;
+    progressBarSVG += `<rect x="${xOffset}" y="50" width="${segmentWidth}" height="10" fill="${color}" rx="2"/>`;
+    xOffset += segmentWidth;
   }
-  return bar;
+  
+  // Language items (2 columns)
+  let langItemsSVG = '';
+  const colWidth = 220;
+  let row = 0;
+  
+  for (let i = 0; i < sortedLangs.length; i++) {
+    const [lang, bytes] = sortedLangs[i];
+    const percentage = ((bytes / totalBytes) * 100).toFixed(2);
+    const color = LANG_COLORS[lang] || '#8b949e';
+    
+    const col = i % 2;
+    const x = 30 + (col * colWidth);
+    const y = 90 + (row * 30);
+    
+    langItemsSVG += `
+    <g transform="translate(${x}, ${y})">
+      <circle cx="6" cy="6" r="6" fill="${color}"/>
+      <text x="18" y="10" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="12">${lang}</text>
+      <text x="180" y="10" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">${percentage}%</text>
+    </g>`;
+    
+    if (col === 1) row++;
+  }
+  if (sortedLangs.length % 2 === 1) row++;
+  
+  const svgHeight = 75 + (row * 30) + 20;
+  
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${svgHeight}" viewBox="0 0 495 ${svgHeight}">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="495" height="${svgHeight}" rx="10" fill="url(#grad2)" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Title -->
+  <text x="247.5" y="28" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Most Used Languages</text>
+  
+  <!-- Progress Bar Background -->
+  <rect x="20" y="50" width="455" height="10" rx="5" fill="#21262d"/>
+  
+  <!-- Progress Bar -->
+  ${progressBarSVG}
+  
+  <!-- Language Items -->
+  ${langItemsSVG}
+</svg>`;
 }
 
 // Generate README content
 function generateReadme(langData, contributions, streaks, createdAt) {
-  const totalBytes = Object.values(langData).reduce((a, b) => a + b, 0);
-  const sortedLangs = Object.entries(langData)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 6);
-  
-  const calendar = contributions.contributionsCollection.contributionCalendar;
-  const totalContributions = calendar.totalContributions;
-  
-  // Language emoji colors
-  const langEmoji = {
-    'JavaScript': '🟡',
-    'Python': '🔵',
-    'HTML': '🔴',
-    'CSS': '🟣',
-    'TypeScript': '🔵',
-    'Java': '🟠',
-    'PHP': '🟣',
-    'Dockerfile': '⚫',
-    'Shell': '🟢',
-    'C++': '🔴',
-    'C': '⚫',
-    'Ruby': '🔴',
-    'Go': '🔵',
-    'Rust': '🟠',
-    'Kotlin': '🟣',
-    'Swift': '🟠',
-    'Dart': '🔵'
-  };
-  
-  // Build progress bar using unicode blocks
-  const barWidth = 50;
-  let progressBar = '';
-  for (const [lang, bytes] of sortedLangs) {
-    const pct = bytes / totalBytes;
-    const blocks = Math.max(Math.round(pct * barWidth), 1);
-    progressBar += '█'.repeat(blocks);
-  }
-  // Fill remaining with empty blocks
-  const remaining = barWidth - progressBar.length;
-  if (remaining > 0) {
-    progressBar += '░'.repeat(remaining);
-  }
-  
-  // Build language rows (2 columns)
-  const langRows = [];
-  for (let i = 0; i < sortedLangs.length; i += 2) {
-    const [lang1, bytes1] = sortedLangs[i];
-    const pct1 = ((bytes1 / totalBytes) * 100).toFixed(2);
-    const emoji1 = langEmoji[lang1] || '⚪';
-    
-    let col2 = '';
-    if (sortedLangs[i + 1]) {
-      const [lang2, bytes2] = sortedLangs[i + 1];
-      const pct2 = ((bytes2 / totalBytes) * 100).toFixed(2);
-      const emoji2 = langEmoji[lang2] || '⚪';
-      col2 = `${emoji2} ${lang2} \`${pct2}%\``;
-    }
-    
-    langRows.push(`| ${emoji1} ${lang1} \`${pct1}%\` | ${col2} |`);
-  }
-
   const readme = `<h1 align="center">Hey 👋What's Up?</h1>
 
 ###
@@ -341,35 +393,9 @@ function generateReadme(langData, contributions, streaks, createdAt) {
 
 <!-- GitHub Stats - Auto Generated -->
 <div align="center">
-
-<table>
-<tr><td>
-
-<div align="center">
-
-| <h1>${totalContributions}</h1><br><sub>Total Contributions</sub><br><sup>${formatDateFull(createdAt)} - Present</sup> | <h1>🔥 ${streaks.current.count}</h1><br><sub><b>Current Streak</b></sub><br><sup>${formatDate(streaks.current.start)} - ${formatDate(streaks.current.end)}</sup> | <h1>${streaks.longest.count}</h1><br><sub>Longest Streak</sub><br><sup>${formatDate(streaks.longest.start)} - ${formatDate(streaks.longest.end)}</sup> |
-|:---:|:---:|:---:|
-
-</div>
-
-</td></tr>
-</table>
-
-<table>
-<tr><td>
-
-<h4>Most Used Languages</h4>
-
-\`\`\`text
-${progressBar}
-\`\`\`
-
-${langRows.join('\n')}
-|:---|:---|
-
-</td></tr>
-</table>
-
+  <img src="./assets/streak-stats.svg" alt="Streak Stats" />
+  <br/><br/>
+  <img src="./assets/languages.svg" alt="Most Used Languages" />
 </div>
 
 ###
@@ -406,18 +432,34 @@ async function main() {
   console.log('Fetching contributions...');
   const contributions = await getContributions(token);
   const calendar = contributions.contributionsCollection.contributionCalendar;
+  const totalContributions = calendar.totalContributions;
   
   console.log('Calculating streaks...');
   const streaks = calculateStreaks(calendar.weeks);
   console.log(`Current streak: ${streaks.current.count}, Longest: ${streaks.longest.count}`);
   
+  // Create assets directory
+  if (!fs.existsSync('assets')) {
+    fs.mkdirSync('assets', { recursive: true });
+  }
+  
+  console.log('Generating SVG files...');
+  
+  // Generate and save Streak SVG
+  const streakSVG = generateStreakSVG(totalContributions, streaks, contributions.createdAt);
+  fs.writeFileSync('assets/streak-stats.svg', streakSVG);
+  console.log('Generated: assets/streak-stats.svg');
+  
+  // Generate and save Languages SVG
+  const languagesSVG = generateLanguagesSVG(langData);
+  fs.writeFileSync('assets/languages.svg', languagesSVG);
+  console.log('Generated: assets/languages.svg');
+  
   console.log('Generating README...');
   const readme = generateReadme(langData, contributions, streaks, contributions.createdAt);
-  
-  const fs = require('fs');
   fs.writeFileSync('README.md', readme);
   
-  console.log('README.md generated successfully!');
+  console.log('All files generated successfully!');
 }
 
 main().catch(console.error);
