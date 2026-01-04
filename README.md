@@ -48,11 +48,39 @@
 
 ###
 
-<!-- Stats Section -->
+<!-- GitHub Stats - Auto Generated -->
 <div align="center">
-  <img src="./assets/languages.svg" alt="Top Languages" />
-  <img width="10" />
-  <img src="./assets/streak.svg" alt="GitHub Streak" />
+
+<table>
+<tr><td>
+
+<div align="center">
+
+| <h1>351</h1><br><sub>Total Contributions</sub><br><sup>27 Sep 2023 - Present</sup> | <h1>🔥 4</h1><br><sub><b>Current Streak</b></sub><br><sup>1 Jan - 4 Jan</sup> | <h1>28</h1><br><sub>Longest Streak</sub><br><sup>20 Oct - 16 Nov</sup> |
+|:---:|:---:|:---:|
+
+</div>
+
+</td></tr>
+</table>
+
+<table>
+<tr><td>
+
+<h4>Most Used Languages</h4>
+
+```text
+████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████
+```
+
+| 🔴 HTML `32.93%` | 🟡 JavaScript `6.25%` |
+|:---|:---|
+| 🟣 CSS `32.55%` | 🔵 Python `4.04%` |
+| 🟠 Java `23.98%` | ⚫ Dockerfile `0.24%` |
+
+</td></tr>
+</table>
+
 </div>
 
 ###
