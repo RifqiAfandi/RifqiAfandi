@@ -46,11 +46,10 @@
 ###
 
 <!-- GitHub Stats - Auto Generated -->
-<div align="center">
+<p align="center">
   <img src="./assets/streak-stats.svg" alt="Streak Stats" />
-  <br/><br/>
   <img src="./assets/languages.svg" alt="Most Used Languages" />
-</div>
+</p>
 
 ###
 

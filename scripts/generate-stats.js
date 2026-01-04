@@ -219,123 +219,119 @@ function formatDateFull(dateStr) {
   return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
-// Generate Streak SVG
+// Generate Streak SVG (compact for side-by-side)
 function generateStreakSVG(totalContributions, streaks, createdAt) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="180" viewBox="0 0 400 180">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="fireGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9a00"/>
+      <stop offset="100%" style="stop-color:#ff6b00"/>
     </linearGradient>
   </defs>
   
-  <!-- Background -->
-  <rect width="495" height="195" rx="10" fill="url(#grad)" stroke="#30363d" stroke-width="1"/>
+  <rect width="400" height="180" rx="12" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1"/>
   
-  <!-- Title -->
-  <text x="247.5" y="28" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">GitHub Contribution Streak</text>
+  <!-- Header -->
+  <text x="200" y="25" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14" font-weight="600" text-anchor="middle">🔥 Contribution Streak</text>
+  <line x1="30" y1="38" x2="370" y2="38" stroke="#21262d" stroke-width="1"/>
   
-  <!-- Divider -->
-  <line x1="20" y1="45" x2="475" y2="45" stroke="#30363d" stroke-width="1"/>
-  
-  <!-- Total Contributions -->
-  <g transform="translate(82.5, 75)">
-    <text x="0" y="0" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">${totalContributions}</text>
-    <text x="0" y="25" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Total Contributions</text>
-    <text x="0" y="42" fill="#6e7681" font-family="Segoe UI, Arial, sans-serif" font-size="10" text-anchor="middle">${formatDateFull(createdAt)} - Present</text>
+  <!-- Stats Grid -->
+  <g transform="translate(67, 85)">
+    <text x="0" y="0" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">Total</text>
+    <text x="0" y="28" fill="#e6edf3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="26" font-weight="700" text-anchor="middle">${totalContributions}</text>
+    <text x="0" y="48" fill="#484f58" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">${formatDateFull(createdAt)}</text>
   </g>
   
-  <!-- Current Streak (center, highlighted) -->
-  <g transform="translate(247.5, 75)">
-    <text x="0" y="-15" fill="#f0883e" font-family="Segoe UI, Arial, sans-serif" font-size="18" text-anchor="middle">🔥</text>
-    <text x="0" y="15" fill="#f0883e" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle">${streaks.current.count}</text>
-    <text x="0" y="42" fill="#f0883e" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Current Streak</text>
-    <text x="0" y="58" fill="#6e7681" font-family="Segoe UI, Arial, sans-serif" font-size="10" text-anchor="middle">${formatDate(streaks.current.start)} - ${formatDate(streaks.current.end)}</text>
+  <line x1="133" y1="55" x2="133" y2="140" stroke="#21262d" stroke-width="1"/>
+  
+  <g transform="translate(200, 85)">
+    <text x="0" y="-25" fill="#ff9a00" font-family="Segoe UI, Ubuntu, sans-serif" font-size="16" text-anchor="middle">🔥</text>
+    <text x="0" y="0" fill="#ff9a00" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Current</text>
+    <text x="0" y="32" fill="#ff9a00" font-family="Segoe UI, Ubuntu, sans-serif" font-size="32" font-weight="700" text-anchor="middle">${streaks.current.count}</text>
+    <text x="0" y="52" fill="#484f58" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">${formatDate(streaks.current.start)} - ${formatDate(streaks.current.end)}</text>
   </g>
   
-  <!-- Longest Streak -->
-  <g transform="translate(412.5, 75)">
-    <text x="0" y="0" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">${streaks.longest.count}</text>
-    <text x="0" y="25" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Longest Streak</text>
-    <text x="0" y="42" fill="#6e7681" font-family="Segoe UI, Arial, sans-serif" font-size="10" text-anchor="middle">${formatDate(streaks.longest.start)} - ${formatDate(streaks.longest.end)}</text>
+  <line x1="267" y1="55" x2="267" y2="140" stroke="#21262d" stroke-width="1"/>
+  
+  <g transform="translate(333, 85)">
+    <text x="0" y="0" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">Longest</text>
+    <text x="0" y="28" fill="#e6edf3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="26" font-weight="700" text-anchor="middle">${streaks.longest.count}</text>
+    <text x="0" y="48" fill="#484f58" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">${formatDate(streaks.longest.start)} - ${formatDate(streaks.longest.end)}</text>
   </g>
   
-  <!-- Vertical dividers -->
-  <line x1="165" y1="55" x2="165" y2="145" stroke="#30363d" stroke-width="1"/>
-  <line x1="330" y1="55" x2="330" y2="145" stroke="#30363d" stroke-width="1"/>
-  
-  <!-- Bottom stats -->
-  <rect x="20" y="155" width="455" height="30" rx="5" fill="#21262d"/>
-  <text x="247.5" y="175" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Keep pushing code! 🚀 Your contributions make a difference.</text>
+  <!-- Footer -->
+  <rect x="20" y="150" width="360" height="22" rx="6" fill="#21262d"/>
+  <text x="200" y="165" fill="#7d8590" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">Keep coding! Every commit counts 🚀</text>
 </svg>`;
 }
 
-// Generate Languages SVG
+// Generate Languages SVG (compact for side-by-side)
 function generateLanguagesSVG(langData) {
   const totalBytes = Object.values(langData).reduce((a, b) => a + b, 0);
   const sortedLangs = Object.entries(langData)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 8);
+    .slice(0, 6);
   
-  // Progress bar segments
+  // Progress bar
   let progressBarSVG = '';
   let xOffset = 20;
-  const barWidth = 455;
+  const barWidth = 360;
   
   for (const [lang, bytes] of sortedLangs) {
     const percentage = bytes / totalBytes;
-    const segmentWidth = percentage * barWidth;
+    const segmentWidth = Math.max(percentage * barWidth, 2);
     const color = LANG_COLORS[lang] || '#8b949e';
-    progressBarSVG += `<rect x="${xOffset}" y="50" width="${segmentWidth}" height="10" fill="${color}" rx="2"/>`;
+    progressBarSVG += `<rect x="${xOffset}" y="45" width="${segmentWidth}" height="8" fill="${color}"/>`;
     xOffset += segmentWidth;
   }
   
-  // Language items (2 columns)
+  // Language items (2 columns, 3 rows)
   let langItemsSVG = '';
-  const colWidth = 220;
-  let row = 0;
   
   for (let i = 0; i < sortedLangs.length; i++) {
     const [lang, bytes] = sortedLangs[i];
-    const percentage = ((bytes / totalBytes) * 100).toFixed(2);
+    const percentage = ((bytes / totalBytes) * 100).toFixed(1);
     const color = LANG_COLORS[lang] || '#8b949e';
     
     const col = i % 2;
-    const x = 30 + (col * colWidth);
-    const y = 90 + (row * 30);
+    const row = Math.floor(i / 2);
+    const x = col === 0 ? 30 : 210;
+    const y = 80 + (row * 28);
     
     langItemsSVG += `
     <g transform="translate(${x}, ${y})">
-      <circle cx="6" cy="6" r="6" fill="${color}"/>
-      <text x="18" y="10" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="12">${lang}</text>
-      <text x="180" y="10" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">${percentage}%</text>
+      <circle cx="5" cy="5" r="5" fill="${color}"/>
+      <text x="16" y="9" fill="#e6edf3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500">${lang}</text>
+      <text x="165" y="9" fill="#7d8590" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="end">${percentage}%</text>
     </g>`;
-    
-    if (col === 1) row++;
   }
-  if (sortedLangs.length % 2 === 1) row++;
   
-  const svgHeight = 75 + (row * 30) + 20;
-  
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${svgHeight}" viewBox="0 0 495 ${svgHeight}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="180" viewBox="0 0 400 180">
   <defs>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
     </linearGradient>
   </defs>
   
-  <!-- Background -->
-  <rect width="495" height="${svgHeight}" rx="10" fill="url(#grad2)" stroke="#30363d" stroke-width="1"/>
+  <rect width="400" height="180" rx="12" fill="url(#bgGrad2)" stroke="#30363d" stroke-width="1"/>
   
-  <!-- Title -->
-  <text x="247.5" y="28" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Most Used Languages</text>
+  <!-- Header -->
+  <text x="200" y="25" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14" font-weight="600" text-anchor="middle">📊 Most Used Languages</text>
+  <line x1="30" y1="38" x2="370" y2="38" stroke="#21262d" stroke-width="1"/>
   
   <!-- Progress Bar Background -->
-  <rect x="20" y="50" width="455" height="10" rx="5" fill="#21262d"/>
+  <rect x="20" y="45" width="360" height="8" rx="4" fill="#21262d"/>
   
-  <!-- Progress Bar -->
+  <!-- Progress Bar Segments -->
   ${progressBarSVG}
+  
+  <!-- Round corners for first and last -->
+  <rect x="20" y="45" width="8" height="8" rx="4" fill="${LANG_COLORS[sortedLangs[0]?.[0]] || '#8b949e'}"/>
   
   <!-- Language Items -->
   ${langItemsSVG}
@@ -392,11 +388,10 @@ function generateReadme(langData, contributions, streaks, createdAt) {
 ###
 
 <!-- GitHub Stats - Auto Generated -->
-<div align="center">
+<p align="center">
   <img src="./assets/streak-stats.svg" alt="Streak Stats" />
-  <br/><br/>
   <img src="./assets/languages.svg" alt="Most Used Languages" />
-</div>
+</p>
 
 ###
 
