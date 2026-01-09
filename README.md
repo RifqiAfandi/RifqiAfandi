@@ -54,9 +54,9 @@
 ###
 
 <div align="center">
-  <img src="./assets/visitor-badge.svg" alt="Visitors: Profile" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=RifqiAfandi.RifqiAfandi&left_color=orange&right_color=yellow"  />
 </div>
 
 ###
 
-<!-- Last updated: 2026-01-09T12:38:27.683Z -->
+<!-- Last updated: 2026-01-09T15:34:03.811Z -->
