@@ -53,6 +53,12 @@
 
 ###
 
+<p align="center">
+  <img src="./assets/contribution-graph.svg" alt="Contribution Graph" />
+</p>
+
+###
+
 <div align="center">
   <img src="./assets/visitor-badge.svg" alt="Visitors: Profile" />
 </div>

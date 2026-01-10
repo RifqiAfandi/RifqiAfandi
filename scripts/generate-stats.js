@@ -219,6 +219,112 @@ function formatDateFull(dateStr) {
   return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
+// Generate Contribution Graph SVG (like the image)
+function generateContributionGraphSVG(weeks, username) {
+  // Get last 30 days of contributions
+  const allDays = weeks.flatMap(w => w.contributionDays);
+  const today = new Date();
+  const thirtyDaysAgo = new Date(today);
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  
+  const recentDays = allDays.filter(d => {
+    const date = new Date(d.date);
+    return date >= thirtyDaysAgo && date <= today;
+  }).slice(-30);
+  
+  // Find max contribution for scaling
+  const maxContrib = Math.max(...recentDays.map(d => d.contributionCount), 1);
+  
+  // Chart dimensions
+  const width = 820;
+  const height = 280;
+  const padding = { top: 50, right: 30, bottom: 60, left: 60 };
+  const chartWidth = width - padding.left - padding.right;
+  const chartHeight = height - padding.top - padding.bottom;
+  
+  // Calculate points
+  const points = recentDays.map((day, i) => {
+    const x = padding.left + (i / (recentDays.length - 1)) * chartWidth;
+    const y = padding.top + chartHeight - (day.contributionCount / maxContrib) * chartHeight;
+    return { x, y, count: day.contributionCount, date: day.date };
+  });
+  
+  // Create line path
+  const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+  
+  // Create area path (for gradient fill)
+  const areaPath = `${linePath} L ${points[points.length - 1].x} ${padding.top + chartHeight} L ${points[0].x} ${padding.top + chartHeight} Z`;
+  
+  // Grid lines (horizontal)
+  const gridLines = [];
+  const ySteps = 5;
+  for (let i = 0; i <= ySteps; i++) {
+    const y = padding.top + (i / ySteps) * chartHeight;
+    const value = Math.round(maxContrib * (1 - i / ySteps));
+    gridLines.push(`<line x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" stroke="#21262d" stroke-width="1"/>`);
+    gridLines.push(`<text x="${padding.left - 10}" y="${y + 4}" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="end">${value}</text>`);
+  }
+  
+  // X-axis labels (days)
+  const xLabels = [];
+  const labelInterval = Math.ceil(recentDays.length / 15);
+  for (let i = 0; i < recentDays.length; i += labelInterval) {
+    const day = recentDays[i];
+    const x = padding.left + (i / (recentDays.length - 1)) * chartWidth;
+    const date = new Date(day.date);
+    const label = date.getDate();
+    xLabels.push(`<text x="${x}" y="${height - padding.bottom + 25}" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">${label}</text>`);
+  }
+  
+  // Data points
+  const dataPoints = points.map(p => 
+    `<circle cx="${p.x}" cy="${p.y}" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>`
+  ).join('\n    ');
+  
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+  <defs>
+    <linearGradient id="bgGradGraph" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9f7aea"/>
+      <stop offset="100%" style="stop-color:#c4b5fd"/>
+    </linearGradient>
+    <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9f7aea;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#9f7aea;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="${width}" height="${height}" rx="12" fill="url(#bgGradGraph)" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Title -->
+  <text x="${width / 2}" y="30" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="16" font-weight="600" text-anchor="middle">${username}'s Contribution Graph</text>
+  
+  <!-- Grid -->
+  ${gridLines.join('\n  ')}
+  
+  <!-- Y-axis label -->
+  <text x="20" y="${padding.top + chartHeight / 2}" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" text-anchor="middle" transform="rotate(-90, 20, ${padding.top + chartHeight / 2})">Contributions</text>
+  
+  <!-- X-axis label -->
+  <text x="${width / 2}" y="${height - 10}" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" text-anchor="middle">Days</text>
+  
+  <!-- X-axis day labels -->
+  ${xLabels.join('\n  ')}
+  
+  <!-- Area fill -->
+  <path d="${areaPath}" fill="url(#areaGrad)"/>
+  
+  <!-- Line -->
+  <path d="${linePath}" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Data points -->
+  ${dataPoints}
+</svg>`;
+}
+
 // Generate Streak SVG (compact for side-by-side)
 function generateStreakSVG(totalContributions, streaks, createdAt) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="180" viewBox="0 0 400 180">
@@ -395,8 +501,14 @@ function generateReadme(langData, contributions, streaks, createdAt) {
 
 ###
 
+<p align="center">
+  <img src="./assets/contribution-graph.svg" alt="Contribution Graph" />
+</p>
+
+###
+
 <div align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=RifqiAfandi.RifqiAfandi&left_color=orange&right_color=yellow"  />
+  <img src="./assets/visitor-badge.svg" alt="Visitors: Profile" />
 </div>
 
 ###
@@ -439,6 +551,11 @@ async function main() {
   }
   
   console.log('Generating SVG files...');
+  
+  // Generate and save Contribution Graph SVG
+  const graphSVG = generateContributionGraphSVG(calendar.weeks, 'Rifqi Afandi');
+  fs.writeFileSync('assets/contribution-graph.svg', graphSVG);
+  console.log('Generated: assets/contribution-graph.svg');
   
   // Generate and save Streak SVG
   const streakSVG = generateStreakSVG(totalContributions, streaks, contributions.createdAt);
