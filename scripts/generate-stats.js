@@ -2,6 +2,13 @@ const https = require('https');
 const fs = require('fs');
 
 const USERNAME = 'RifqiAfandi';
+const DISPLAY_NAME = 'Rifqi Afandi';
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+const visitorCountArg = args.find(arg => arg.startsWith('--visitors='));
+const visitorCount = visitorCountArg ? parseInt(visitorCountArg.split('=')[1]) : null;
+const onlyVisitors = args.includes('--only-visitors');
 
 // Language colors
 const LANG_COLORS = {
@@ -571,7 +578,70 @@ async function main() {
   const readme = generateReadme(langData, contributions, streaks, contributions.createdAt);
   fs.writeFileSync('README.md', readme);
   
+  // Update visitor badge if count provided
+  if (visitorCount !== null) {
+    updateVisitorBadge(visitorCount);
+  }
+  
   console.log('All files generated successfully!');
 }
 
-main().catch(console.error);
+// Generate Visitor Badge SVG
+function generateVisitorBadgeSVG(count) {
+  const countStr = count.toLocaleString();
+  const countWidth = Math.max(countStr.length * 8 + 20, 50);
+  const totalWidth = 80 + countWidth;
+  
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="28" role="img" aria-label="Visitors: ${count}">
+  <title>Visitors: ${count}</title>
+  <defs>
+    <linearGradient id="gradLeft" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ff9f1a"/>
+      <stop offset="100%" stop-color="#ff7a00"/>
+    </linearGradient>
+    <linearGradient id="gradRight" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#f9c74f"/>
+    </linearGradient>
+    <clipPath id="round">
+      <rect rx="14" width="${totalWidth}" height="28"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="80" height="28" fill="url(#gradLeft)"/>
+    <rect x="80" width="${countWidth}" height="28" fill="url(#gradRight)"/>
+  </g>
+  <text x="40" y="18" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif" font-size="12" font-weight="600" fill="#ffffff">Visitors</text>
+  <text x="${80 + countWidth / 2}" y="18" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif" font-size="12" font-weight="700" fill="#000000">${countStr}</text>
+</svg>`;
+}
+
+// Update visitor badge
+function updateVisitorBadge(count) {
+  const badgeSVG = generateVisitorBadgeSVG(count);
+  fs.writeFileSync('assets/visitor-badge.svg', badgeSVG);
+  console.log(`Updated visitor badge: ${count.toLocaleString()} visitors`);
+}
+
+// Quick visitor update mode
+async function updateVisitorsOnly() {
+  if (visitorCount === null) {
+    console.error('Error: --visitors=NUMBER is required');
+    console.log('Usage: node generate-stats.js --only-visitors --visitors=1234');
+    process.exit(1);
+  }
+  
+  if (!fs.existsSync('assets')) {
+    fs.mkdirSync('assets', { recursive: true });
+  }
+  
+  updateVisitorBadge(visitorCount);
+  console.log('Visitor badge updated!');
+}
+
+// Check if only updating visitors
+if (onlyVisitors) {
+  updateVisitorsOnly();
+} else {
+  main().catch(console.error);
+}
