@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="28" role="img" aria-label="Visitors: Profile">
-  <title>Visitors: Profile</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="28" role="img" aria-label="Visitors: 1234">
+  <title>Visitors: 1234</title>
   <defs>
     <linearGradient id="gradLeft" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stop-color="#ff9f1a"/>
@@ -10,14 +10,13 @@
       <stop offset="100%" stop-color="#f9c74f"/>
     </linearGradient>
     <clipPath id="round">
-      <rect rx="14" width="160" height="28"/>
+      <rect rx="14" width="140" height="28"/>
     </clipPath>
   </defs>
   <g clip-path="url(#round)">
-    <rect width="90" height="28" fill="url(#gradLeft)"/>
-    <rect x="90" width="70" height="28" fill="url(#gradRight)"/>
+    <rect width="80" height="28" fill="url(#gradLeft)"/>
+    <rect x="80" width="60" height="28" fill="url(#gradRight)"/>
   </g>
-  <line x1="90" y1="0" x2="90" y2="28" stroke="rgba(255,255,255,0.35)"/>
-  <text x="45" y="18" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif" font-size="12" fill="#ffffff">Visitors</text>
-  <text x="125" y="18" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif" font-size="12" fill="#000000">Profile</text>
+  <text x="40" y="18" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif" font-size="12" font-weight="600" fill="#ffffff">Visitors</text>
+  <text x="110" y="18" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif" font-size="12" font-weight="700" fill="#000000">1234</text>
 </svg>
