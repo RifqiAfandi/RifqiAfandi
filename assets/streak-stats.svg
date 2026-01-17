@@ -19,7 +19,7 @@
   <!-- Stats Grid -->
   <g transform="translate(67, 85)">
     <text x="0" y="0" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">Total</text>
-    <text x="0" y="28" fill="#e6edf3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="26" font-weight="700" text-anchor="middle">371</text>
+    <text x="0" y="28" fill="#e6edf3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="26" font-weight="700" text-anchor="middle">373</text>
     <text x="0" y="48" fill="#484f58" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">Sep 27, 2023</text>
   </g>
   
@@ -28,8 +28,8 @@
   <g transform="translate(200, 85)">
     <text x="0" y="-25" fill="#ff9a00" font-family="Segoe UI, Ubuntu, sans-serif" font-size="16" text-anchor="middle">🔥</text>
     <text x="0" y="0" fill="#ff9a00" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Current</text>
-    <text x="0" y="32" fill="#ff9a00" font-family="Segoe UI, Ubuntu, sans-serif" font-size="32" font-weight="700" text-anchor="middle">12</text>
-    <text x="0" y="52" fill="#484f58" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">Jan 1 - Jan 12</text>
+    <text x="0" y="32" fill="#ff9a00" font-family="Segoe UI, Ubuntu, sans-serif" font-size="32" font-weight="700" text-anchor="middle">2</text>
+    <text x="0" y="52" fill="#484f58" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">Jan 16 - Jan 17</text>
   </g>
   
   <line x1="267" y1="55" x2="267" y2="140" stroke="#21262d" stroke-width="1"/>
