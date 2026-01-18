@@ -16,7 +16,7 @@
   <rect x="20" y="45" width="360" height="8" rx="4" fill="#21262d"/>
   
   <!-- Progress Bar Segments -->
-  <rect x="20" y="45" width="315.55669200021777" height="8" fill="#f1e05a"/><rect x="335.55669200021777" y="45" width="27.675587573967427" height="8" fill="#563d7c"/><rect x="363.2322795741852" y="45" width="7.930429790540418" height="8" fill="#3572A5"/><rect x="371.16270936472563" y="45" width="5.576867558922364" height="8" fill="#A97BFF"/><rect x="376.739576923648" y="45" width="3.2604230763520348" height="8" fill="#e34c26"/>
+  <rect x="20" y="45" width="315.58263111817496" height="8" fill="#f1e05a"/><rect x="335.58263111817496" y="45" width="27.659434853503434" height="8" fill="#563d7c"/><rect x="363.2420659716784" y="45" width="7.925801234227981" height="8" fill="#3572A5"/><rect x="371.1678672059064" y="45" width="5.573612647621811" height="8" fill="#A97BFF"/><rect x="376.74147985352823" y="45" width="3.2585201464718323" height="8" fill="#e34c26"/>
   
   <!-- Round corners for first and last -->
   <rect x="20" y="45" width="8" height="8" rx="4" fill="#f1e05a"/>

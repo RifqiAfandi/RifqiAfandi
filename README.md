@@ -2,6 +2,21 @@
 
 ###
 
+<h3 align="center">I'm Rifqi Afandi</h3>
+
+<p align="center">
+  A passionate <strong>Full Stack Developer</strong> who loves building web applications and exploring new technologies. I enjoy turning ideas into reality through clean, efficient code and creating seamless user experiences.
+</p>
+
+<p align="center">
+  🔭 I'm currently working on <strong>Web Development Projects</strong><br>
+  🌱 I'm continuously learning and improving my skills in <strong>React, Node.js, and Python</strong><br>
+  🤖 I leverage <strong>AI tools</strong> to boost productivity and accelerate development workflows<br>
+  💬 Ask me about <strong>JavaScript, Frontend Development, and Backend APIs</strong><br>
+</p>
+
+###
+
 <br clear="both">
 
 <div align="center">
@@ -65,4 +80,4 @@
 
 ###
 
-<!-- Last updated: 2026-01-18T15:46:35.845Z -->
+<!-- Last updated: 2026-01-18T15:47:34.936Z -->
