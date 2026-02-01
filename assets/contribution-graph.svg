@@ -40,46 +40,46 @@
   <text x="410" y="270" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" text-anchor="middle">Days</text>
   
   <!-- X-axis day labels -->
-  <text x="60" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">2</text>
-  <text x="110.34482758620689" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">4</text>
-  <text x="160.68965517241378" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">6</text>
-  <text x="211.0344827586207" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">8</text>
-  <text x="261.37931034482756" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">10</text>
-  <text x="311.72413793103453" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">12</text>
-  <text x="362.0689655172414" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">14</text>
-  <text x="412.4137931034483" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">16</text>
-  <text x="462.7586206896552" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">18</text>
-  <text x="513.1034482758621" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">20</text>
-  <text x="563.4482758620691" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">22</text>
-  <text x="613.7931034482758" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">24</text>
-  <text x="664.1379310344828" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">26</text>
-  <text x="714.4827586206897" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">28</text>
-  <text x="764.8275862068966" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">30</text>
+  <text x="60" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">3</text>
+  <text x="110.34482758620689" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">5</text>
+  <text x="160.68965517241378" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">7</text>
+  <text x="211.0344827586207" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">9</text>
+  <text x="261.37931034482756" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">11</text>
+  <text x="311.72413793103453" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">13</text>
+  <text x="362.0689655172414" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">15</text>
+  <text x="412.4137931034483" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">17</text>
+  <text x="462.7586206896552" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">19</text>
+  <text x="513.1034482758621" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">21</text>
+  <text x="563.4482758620691" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">23</text>
+  <text x="613.7931034482758" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">25</text>
+  <text x="664.1379310344828" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">27</text>
+  <text x="714.4827586206897" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">29</text>
+  <text x="764.8275862068966" y="245" fill="#7ee787" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">31</text>
   
   <!-- Area fill -->
-  <path d="M 60 186 L 85.17241379310344 186 L 110.34482758620689 84 L 135.51724137931035 50 L 160.68965517241378 186 L 185.86206896551727 186 L 211.0344827586207 186 L 236.20689655172416 152 L 261.37931034482756 152 L 286.55172413793105 84 L 311.72413793103453 186 L 336.8965517241379 186 L 362.0689655172414 152 L 387.2413793103448 186 L 412.4137931034483 186 L 437.58620689655174 152 L 462.7586206896552 186 L 487.9310344827586 220 L 513.1034482758621 220 L 538.2758620689656 220 L 563.4482758620691 220 L 588.6206896551724 220 L 613.7931034482758 220 L 638.9655172413793 220 L 664.1379310344828 220 L 689.3103448275862 220 L 714.4827586206897 220 L 739.6551724137931 220 L 764.8275862068966 220 L 790 220 L 790 220 L 60 220 Z" fill="url(#areaGrad)"/>
+  <path d="M 60 186 L 85.17241379310344 84 L 110.34482758620689 50 L 135.51724137931035 186 L 160.68965517241378 186 L 185.86206896551727 186 L 211.0344827586207 152 L 236.20689655172416 152 L 261.37931034482756 84 L 286.55172413793105 186 L 311.72413793103453 186 L 336.8965517241379 152 L 362.0689655172414 186 L 387.2413793103448 186 L 412.4137931034483 152 L 437.58620689655174 186 L 462.7586206896552 220 L 487.9310344827586 220 L 513.1034482758621 220 L 538.2758620689656 220 L 563.4482758620691 220 L 588.6206896551724 220 L 613.7931034482758 220 L 638.9655172413793 220 L 664.1379310344828 220 L 689.3103448275862 220 L 714.4827586206897 220 L 739.6551724137931 220 L 764.8275862068966 220 L 790 220 L 790 220 L 60 220 Z" fill="url(#areaGrad)"/>
   
   <!-- Line -->
-  <path d="M 60 186 L 85.17241379310344 186 L 110.34482758620689 84 L 135.51724137931035 50 L 160.68965517241378 186 L 185.86206896551727 186 L 211.0344827586207 186 L 236.20689655172416 152 L 261.37931034482756 152 L 286.55172413793105 84 L 311.72413793103453 186 L 336.8965517241379 186 L 362.0689655172414 152 L 387.2413793103448 186 L 412.4137931034483 186 L 437.58620689655174 152 L 462.7586206896552 186 L 487.9310344827586 220 L 513.1034482758621 220 L 538.2758620689656 220 L 563.4482758620691 220 L 588.6206896551724 220 L 613.7931034482758 220 L 638.9655172413793 220 L 664.1379310344828 220 L 689.3103448275862 220 L 714.4827586206897 220 L 739.6551724137931 220 L 764.8275862068966 220 L 790 220" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 60 186 L 85.17241379310344 84 L 110.34482758620689 50 L 135.51724137931035 186 L 160.68965517241378 186 L 185.86206896551727 186 L 211.0344827586207 152 L 236.20689655172416 152 L 261.37931034482756 84 L 286.55172413793105 186 L 311.72413793103453 186 L 336.8965517241379 152 L 362.0689655172414 186 L 387.2413793103448 186 L 412.4137931034483 152 L 437.58620689655174 186 L 462.7586206896552 220 L 487.9310344827586 220 L 513.1034482758621 220 L 538.2758620689656 220 L 563.4482758620691 220 L 588.6206896551724 220 L 613.7931034482758 220 L 638.9655172413793 220 L 664.1379310344828 220 L 689.3103448275862 220 L 714.4827586206897 220 L 739.6551724137931 220 L 764.8275862068966 220 L 790 220" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   
   <!-- Data points -->
   <circle cx="60" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="85.17241379310344" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="110.34482758620689" cy="84" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="135.51724137931035" cy="50" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="85.17241379310344" cy="84" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="110.34482758620689" cy="50" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="135.51724137931035" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="160.68965517241378" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="185.86206896551727" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="211.0344827586207" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="211.0344827586207" cy="152" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="236.20689655172416" cy="152" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="261.37931034482756" cy="152" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="286.55172413793105" cy="84" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="261.37931034482756" cy="84" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="286.55172413793105" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="311.72413793103453" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="336.8965517241379" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="362.0689655172414" cy="152" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="336.8965517241379" cy="152" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="362.0689655172414" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="387.2413793103448" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="412.4137931034483" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="437.58620689655174" cy="152" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
-    <circle cx="462.7586206896552" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="412.4137931034483" cy="152" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="437.58620689655174" cy="186" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+    <circle cx="462.7586206896552" cy="220" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="487.9310344827586" cy="220" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="513.1034482758621" cy="220" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
     <circle cx="538.2758620689656" cy="220" r="4" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
