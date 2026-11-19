@@ -16,7 +16,7 @@
   <rect x="20" y="45" width="360" height="8" rx="4" fill="#21262d"/>
   
   <!-- Progress Bar Segments -->
-  <rect x="20" y="45" width="293.60466004233626" height="8" fill="#f1e05a"/><rect x="313.60466004233626" y="45" width="27.013278188277194" height="8" fill="#563d7c"/><rect x="340.61793823061345" y="45" width="18.72774368545325" height="8" fill="#e34c26"/><rect x="359.3456819160667" y="45" width="15.491219656728134" height="8" fill="#3572A5"/><rect x="374.8369015727949" y="45" width="5.163098427205166" height="8" fill="#A97BFF"/>
+  <rect x="20" y="45" width="292.93329103598296" height="8" fill="#f1e05a"/><rect x="312.93329103598296" y="45" width="28.04250883712499" height="8" fill="#563d7c"/><rect x="340.975799873108" y="45" width="18.595214356929212" height="8" fill="#e34c26"/><rect x="359.5710142300372" y="45" width="15.322215172663826" height="8" fill="#3572A5"/><rect x="374.893229402701" y="45" width="5.106770597299012" height="8" fill="#A97BFF"/>
   
   <!-- Round corners for first and last -->
   <rect x="20" y="45" width="8" height="8" rx="4" fill="#f1e05a"/>
@@ -26,12 +26,12 @@
     <g transform="translate(30, 80)">
       <circle cx="5" cy="5" r="5" fill="#f1e05a"/>
       <text x="16" y="9" fill="#e6edf3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500">JavaScript</text>
-      <text x="165" y="9" fill="#7d8590" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="end">81.6%</text>
+      <text x="165" y="9" fill="#7d8590" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="end">81.4%</text>
     </g>
     <g transform="translate(210, 80)">
       <circle cx="5" cy="5" r="5" fill="#563d7c"/>
       <text x="16" y="9" fill="#e6edf3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500">CSS</text>
-      <text x="165" y="9" fill="#7d8590" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="end">7.5%</text>
+      <text x="165" y="9" fill="#7d8590" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="end">7.8%</text>
     </g>
     <g transform="translate(30, 108)">
       <circle cx="5" cy="5" r="5" fill="#e34c26"/>
